@@ -19,15 +19,15 @@ class ProductDetailScreen extends StatelessWidget {
               width: double.infinity,
               child: Image.network(
                 product.imageUrl,
-                fit: BoxFit.cover,
+                fit: BoxFit.contain,
               ),
             ),
             SizedBox(height: 10),
             Text(
               'R\$ ${product.price}',
               style: TextStyle(
-                color: Colors.grey,
-                fontSize: 20,
+                color: Colors.black,
+                fontSize: 25,
               ),
             ),
             SizedBox(height: 10),
