@@ -1,7 +1,9 @@
 # shop
 
 A new Flutter project.
+
 Controlando o foco.
+
 Campo de entrada de URL.
 
 ## Getting Started
