@@ -31,7 +31,7 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-                    Divider(),
+          Divider(),
           ListTile(
             leading: Icon(Icons.edit),
             title: Text('Gerenciar Produtos'),

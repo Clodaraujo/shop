@@ -15,14 +15,14 @@ class CartItemWidget extends StatelessWidget {
         color: Theme.of(context).errorColor,
         child: Icon(
           Icons.delete,
-          color: Colors.black,
+          color: Colors.white,
           size: 40,
         ),
         alignment: Alignment.centerRight,
         padding: EdgeInsets.only(right: 20),
         margin: EdgeInsets.symmetric(
           horizontal: 15,
-          vertical: 5,
+          vertical: 4,
         ),
       ),
       direction: DismissDirection.endToStart,
@@ -30,8 +30,8 @@ class CartItemWidget extends StatelessWidget {
         return showDialog(
             context: context,
             builder: (ctx) => AlertDialog(
-                  title: Text("Tem certeza ?"),
-                  content: Text('Quer remover o item do carrrinho ? '),
+                  title: Text('Tem certeza?'),
+                  content: Text('Quer remover o item do carrinho?'),
                   actions: <Widget>[
                     FlatButton(
                       child: Text('Não'),
@@ -40,7 +40,7 @@ class CartItemWidget extends StatelessWidget {
                       },
                     ),
                     FlatButton(
-                      child: Text('sim'),
+                      child: Text('Sim'),
                       onPressed: () {
                         Navigator.of(ctx).pop(true);
                       },
@@ -54,15 +54,15 @@ class CartItemWidget extends StatelessWidget {
       },
       child: Card(
         margin: EdgeInsets.symmetric(
-          horizontal: 10,
-          vertical: 8,
+          horizontal: 15,
+          vertical: 4,
         ),
         child: Padding(
           padding: EdgeInsets.all(8),
           child: ListTile(
             leading: CircleAvatar(
               child: Padding(
-                padding: EdgeInsets.all(1),
+                padding: EdgeInsets.all(5),
                 child: FittedBox(
                   child: Text('${cartItem.price}'),
                 ),
@@ -70,7 +70,7 @@ class CartItemWidget extends StatelessWidget {
             ),
             title: Text(cartItem.title),
             subtitle: Text('Total: R\$ ${cartItem.price * cartItem.quantity}'),
-            trailing: Text(' ${cartItem.quantity}x'),
+            trailing: Text('${cartItem.quantity}x'),
           ),
         ),
       ),

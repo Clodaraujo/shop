@@ -2,10 +2,6 @@
 
 A new Flutter project.
 
-Controlando o foco.
-
-Campo de entrada de URL.
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.

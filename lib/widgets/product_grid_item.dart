@@ -11,7 +11,7 @@ class ProductGridItem extends StatelessWidget {
     final Cart cart = Provider.of<Cart>(context, listen: false);
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(10),
       child: GridTile(
         child: GestureDetector(
           onTap: () {
@@ -48,11 +48,13 @@ class ProductGridItem extends StatelessWidget {
               Scaffold.of(context).hideCurrentSnackBar();
               Scaffold.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Produto adiciondo com sucesso'),
+                  content: Text(
+                    'Produto adicionado com sucesso!',
+                  ),
                   duration: Duration(seconds: 2),
                   action: SnackBarAction(
-                    label: 'Desfazer',
-                    onPressed: (){
+                    label: 'DESFAZER',
+                    onPressed: () {
                       cart.removeSingleItem(product.id);
                     },
                   ),
