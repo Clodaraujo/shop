@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './utils/app_routes.dart';
+import './utils/custom_route.dart';
 
 import './views/auth_home_screen.dart';
 //import './views/products_overview_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
           create: (_) => new Orders(),
           update: (ctx, auth, previousOrders) => new Orders(
             auth.token,
+            auth.userId,
             previousOrders.items,
           ),
         )
@@ -51,6 +53,12 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.purple,
           accentColor: Colors.deepOrange,
           fontFamily: 'Lato',
+          pageTransitionsTheme: PageTransitionsTheme(
+            builders: {
+              TargetPlatform.android: CustomPageTransitionsBuilder(),
+              TargetPlatform.iOS: CustomPageTransitionsBuilder(),
+            },
+          ),
         ),
         routes: {
           AppRoutes.AUTH_HOME: (ctx) => AutOrHomeScreen(),
